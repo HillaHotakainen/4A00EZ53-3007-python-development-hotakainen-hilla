@@ -4,8 +4,7 @@ def muh_funk():
 muh_funk()
 
 def mah_funk(name):
-    nimi=name
-    return nimi
+    return name
 
 print(mah_funk("Hilla"))
 
