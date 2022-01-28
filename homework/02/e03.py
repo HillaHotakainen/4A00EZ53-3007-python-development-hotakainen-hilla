@@ -37,17 +37,12 @@ print(kokeilu_jutu.swapcase())
 print("\n")
 print("Give a:", end="")
 nimi_a=input()
+
 print("Give b:", end="")
 nimi_b=input()
+
 print(id(nimi_a))
 print(id(nimi_b))
 
-if (id(nimi_a)) is (id(nimi_b)):
-    print("True")
-else:
-    print("False")
-if nimi_a == nimi_b:
-    print("True")
-else:
-    print("False")
-
+print(nimi_a == nimi_b)
+print((id(nimi_a))==(id(nimi_b)))
