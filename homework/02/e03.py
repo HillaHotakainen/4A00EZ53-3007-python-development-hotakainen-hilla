@@ -45,4 +45,4 @@ print(id(nimi_a))
 print(id(nimi_b))
 
 print(nimi_a == nimi_b)
-print((id(nimi_a))==(id(nimi_b)))
+print((id(nimi_a))is(id(nimi_b)))
