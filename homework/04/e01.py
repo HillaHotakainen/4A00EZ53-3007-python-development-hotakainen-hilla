@@ -5,3 +5,4 @@ def lotto(amount):
     while len(numbers) < amount:
         numbers.add(random.randint(1,40))
 
+print(lotto(7))
