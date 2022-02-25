@@ -1,5 +1,6 @@
 from flask import Flask
 import datetime
+from htmlhelper import generate_html_page
 
 # create Flask object, give module name
 # where to look for resources, like templates or static files
@@ -12,8 +13,10 @@ def hello_world():
 
 @app.route("/date")
 def date():
-    x = datetime.datetime.now()
-    return f"<p>{x}</p>"
+    title = "Date"
+    content = datetime.datetime.now()
+    page = generate_html_page(title, content)
+    return page
 
 # start the app if using python3 app.py
 if __name__ == "__main__":
