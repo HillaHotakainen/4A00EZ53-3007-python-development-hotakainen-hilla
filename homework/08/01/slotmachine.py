@@ -18,7 +18,7 @@ def slot_machine():
     response = make_response(f"<p>{returning_line}</p>")
     response.set_cookie("money", f"{money}")
 
-    many_money = f"You have {money}e"
+    many_money = f"You have will have {money}e"
     x = random.randint(0,2)
     y = random.randint(0,2)
     z = random.randint(0,2)
