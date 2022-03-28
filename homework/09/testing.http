@@ -1,0 +1,17 @@
+
+get http://localhost:5000/posts
+
+###
+
+get http://localhost:5000/posts/1
+
+###
+
+post http://localhost:5000/posts
+content-type: application/json
+
+{ "title": "blahb blah" }
+
+###
+
+delete http://localhost:5000/posts/11
