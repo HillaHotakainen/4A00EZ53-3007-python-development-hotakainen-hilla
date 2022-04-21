@@ -17,13 +17,24 @@ player_name = ""
 word = ["apina", "kissa"] #placeholder
 guess_word = word[1] #placeholder
 
-#defs here
-
-print("Hello!", "This a basic game of hangman")
+print("Hello!", "This is a basic game of hangman")
 while len(player_name) < 1:
         print("Please give me your name")
         name = input()
         if len(name) > 1:
                 player_name = name
 
-print(name, player_name)
+def play_the_game(player_name):
+        print("Okay", player_name.capitalize(), "Let's start!")
+        print(pic[0])
+        print("your word has", len(guess_word), "letters")
+        guess = ""
+        print("Guess the word")
+        while guess != guess_word:
+                guess = input()
+                if guess == guess_word:
+                        print("You won!")
+                else:
+                        print("Try again!")
+
+play_the_game(player_name)
