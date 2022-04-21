@@ -28,13 +28,22 @@ def play_the_game(player_name):
         print("Okay", player_name.capitalize(), "Let's start!")
         print(pic[0])
         print("your word has", len(guess_word), "letters")
+        number_of_guesses = 0
         guess = ""
-        print("Guess the word")
-        while guess != guess_word:
+        while guess != guess_word and number_of_guesses < 6:
+                print("What is your guess?")
                 guess = input()
                 if guess == guess_word:
                         print("You won!")
+                elif number_of_guesses < 5:
+                        number_of_guesses = number_of_guesses + 1
+                        print("Wrong one!")
+                        print("Guesses left:", 6 - number_of_guesses)
+                        print(pic[number_of_guesses])
                 else:
-                        print("Try again!")
+                        print("Game over!")
+                        number_of_guesses = number_of_guesses + 1
+                        print(pic[number_of_guesses])
+
 
 play_the_game(player_name)
