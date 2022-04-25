@@ -20,7 +20,6 @@ player_name = ""
 f = open("wordlist.txt", "r")
 word = f.readlines()
 guess_word = random.choice(word)[:-1]
-print(guess_word)
 guessed_letters = []
 print("Hello!", "This is a basic game of hangman")
 while len(player_name) < 1:
