@@ -1,3 +1,0 @@
-jack,1.5
-john,5.6
-dhjkas,3.7
