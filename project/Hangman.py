@@ -58,37 +58,35 @@ while True:
                 else:
                         print("you did not reach top3 :C")
 
+        def overwrite(file, stripped_scores):
+                score_file = open(file, "w")
+                score_file.seek(0)
+                score_file.write(stripped_scores)
+                score_file.truncate()
+
         def set_new_score(name, wintime, scores, position, file):
+                file = file
                 if position == 0:
                         line1 = name, wintime
                         line2 = scores[1][0], scores[1][1]
                         line3 = scores[2][0], scores[2][1]
                         new_scores = str(f"{line1}\n{line2}\n{line3}")
                         stripped_scores = re.sub("[ ')(]", '', new_scores)
-                        score_file = open(file, "w")
-                        score_file.seek(0)
-                        score_file.write(stripped_scores)
-                        score_file.truncate()
+                        overwrite(file, stripped_scores)
                 elif position == 1:
                         line1 = scores[0][0], scores[0][1]
                         line2 = name, wintime
                         line3 = scores[2][0], scores[2][1]
                         new_scores = str(f"{line1}\n{line2}\n{line3}")
                         stripped_scores = re.sub("[ ')(]", '', new_scores)
-                        score_file = open(file, "w")
-                        score_file.seek(0)
-                        score_file.write(stripped_scores)
-                        score_file.truncate()
+                        overwrite(file, stripped_scores)
                 else:
                         line1 = scores[0][0], scores[0][1]
                         line2 = scores[1][0], scores[1][1]
                         line3 = name, wintime
                         new_scores = str(f"{line1}\n{line2}\n{line3}")
                         stripped_scores = re.sub("[ ')(]", '', new_scores)
-                        score_file = open(file, "w")
-                        score_file.seek(0)
-                        score_file.write(stripped_scores)
-                        score_file.truncate()
+                        overwrite(file, stripped_scores)
 
         def check_scores(number):
                 file = f"highscores{number}.txt"
