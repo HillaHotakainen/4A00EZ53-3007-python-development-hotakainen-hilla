@@ -15,7 +15,6 @@ pic = ["  _____\n  |   |\n      |\n      |\n      |\n      |\n¯¯¯¯¯¯¯",
 
         "  _____\n  |   |\n  O   |\n /|\  |\n / \  |\n      |\n¯¯¯¯¯¯¯"]
 
-guesses = 0
 player_name = ""
 f = open("wordlist.txt", "r")
 word = f.readlines()
@@ -28,23 +27,33 @@ while len(player_name) < 1:
         name = input()
         if len(name) > 1:
                 player_name = name
+
 def get_time(elem):
         return elem[1]
 
-def pull_scores():
-        f = open("highscores.txt", "r")
+def scores_to_2D(highscore):
+        f = open(highscore, "r")
         scores = f.read()
-        f.close()
-        return scores
-
-def scores_to_2D():
-        pull = pull_scores()
         twoD = []
-        lines = pull.strip().split("\n")
+        lines = scores.strip().split("\n")
         for line in lines:
                 twoD.append(line.split(","))
         twoD.sort(key=get_time)
+        f.close()
         return twoD
+
+def set_new_score(name, wintime, scores, position):
+        print(scores)
+        if position == 0:
+                scores[0][0] = name
+                scores[0][1] = wintime
+                print(scores)
+        elif position == 1:
+                scores[1][0] = name
+                scores[1][1] = wintime
+        else:
+                scores[2][0] = name
+                scores[2][1] = wintime
 
 def play_the_game(player_name):
         print("Okay", player_name.capitalize(), "Let's start!")
@@ -58,12 +67,23 @@ def play_the_game(player_name):
                 guess = input()
                 if guess == guess_word:
                         elapsed_time = (time.perf_counter_ns() - t) / 1000000000
+                        win_time = str(elapsed_time)
                         print("That was the correct word, you won!")
                         print("Your time was", elapsed_time, "seconds")
                         if guess_word == "bunny":
-                                sorted = scores_to_2D()
-                                if float(sorted[0][1]) < elapsed_time and float(sorted[1][1]) < elapsed_time and float(sorted[2][1]) < elapsed_time:
-                                        print("jee")
+                                file = "highscores_bunny.txt"
+                                sorted = scores_to_2D(file)
+                                first = float(sorted[0][1])
+                                second = float(sorted[1][1])
+                                third = float(sorted[2][1])
+                                if first > elapsed_time:
+                                        set_new_score(name, win_time, sorted, 0)
+                                elif first < elapsed_time and second > elapsed_time:
+                                        set_new_score(name, win_time, sorted, 1)
+                                elif first < elapsed_time and second < elapsed_time and third > elapsed_time:
+                                        set_new_score(name, win_time, sorted, 2)
+                                else:
+                                        print("you did not reach top3")
                 elif number_of_guesses < 5:
                         number_of_guesses = number_of_guesses + 1
                         guessed_letters.append(guess.lower())
