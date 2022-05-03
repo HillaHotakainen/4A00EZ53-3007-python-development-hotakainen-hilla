@@ -12,7 +12,7 @@ Code made in Python, saved words and scores are in .txt files
 
 # Installation
 
-Save all files to same folder
+Save ALL files to same folder
 
 # How to Run the App
 
