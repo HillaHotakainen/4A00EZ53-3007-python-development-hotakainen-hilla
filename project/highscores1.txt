@@ -1,3 +1,3 @@
-kakka,5
-pulla,6
-kakka,7
+Max,15.10
+Mickey,25.12
+Martha,45.18

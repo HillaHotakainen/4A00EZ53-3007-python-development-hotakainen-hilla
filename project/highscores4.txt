@@ -1,3 +1,3 @@
-kakka,5
-pulla,6
-blob,7
+Val,9.29
+Vera,25.12
+Vixen,45.18

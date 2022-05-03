@@ -1,3 +1,3 @@
-blob,4.5827489
-kakka,5
-pulla,6
+John,15.10
+Jack,25.12
+Jane,45.18
