@@ -6,10 +6,6 @@ Hangman game with top 3 highscores
 
 Hilla Hotakainen
 
-# Screenshots
-
-![Alt text](https://ibb.co/M16ht0T "Start screen")
-
 # Tech/framework used
 
 Code made in Python, saved words and scores are in .txt files
@@ -27,5 +23,5 @@ Hangman.exe
 
 # Screencast
 
-[![Screencast](https://img.youtube.com/vi/2CTqg_e51BU/0.jpg)](https://youtube)
+(https://youtu.be/ohF1-WoVK5M)
 
