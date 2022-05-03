@@ -1,29 +1,31 @@
 # Project Title
 
-A little info about your project and/ or overview that explains what the project is about.
+Hangman game with top 3 highscores
 
 # Author
 
-Firstname Lastname
+Hilla Hotakainen
 
 # Screenshots
 
-![Alt text](https://images.squarespace-cdn.com/content/v1/5cfbcd840dfb94000188ad57/1560216346005-4X306RNLMZGTFTQU4KP8/Intro+1.PNG.png?format=750w "Application startup screen.")
+![Alt text](https://ibb.co/M16ht0T "Start screen")
 
 # Tech/framework used
 
-What language is used, what external modules are used (if any).
+Code made in Python, saved words and scores are in .txt files
 
 # Installation
 
-Provide step by step series of examples and explanations about how to get a development env running.
+Save all files to same folder
 
 # How to Run the App
 
-```
-python3 src/main.py
-```
+Double click on the Hangman.exe file
+Or
+open cmd on the file folder and on cmd write:
+Hangman.exe
 
 # Screencast
 
-[![Screencast](https://img.youtube.com/vi/2CTqg_e51BU/0.jpg)](https://www.youtube.com/watch?v=2CTqg_e51BU)
+[![Screencast](https://img.youtube.com/vi/2CTqg_e51BU/0.jpg)](https://youtube)
+

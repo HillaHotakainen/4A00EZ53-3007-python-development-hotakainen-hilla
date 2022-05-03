@@ -1,3 +1,3 @@
-Lisa,15.10
-Larry,25.12
-Linus,45.18
+Lisa,6.10
+Larry,7.12
+Linus,8.18

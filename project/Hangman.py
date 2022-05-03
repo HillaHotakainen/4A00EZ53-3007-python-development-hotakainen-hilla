@@ -1,10 +1,15 @@
 import time
 import random
 import re
+import pdoc
 
 print("Hello!", "This is a basic game of hangman.")
-#while loop to keep the program running until user ends it.
 while True:
+        """
+        I made pcod comments.
+        Pdoc refused to generate anything.
+        I left them here as a proof that I tried.
+        """
         #hangman pictures in one line each. 
         pic = ["  _____\n  |   |\n      |\n      |\n      |\n      |\n¯¯¯¯¯¯¯", 
                 "  _____\n  |   |\n  O   |\n      |\n      |\n      |\n¯¯¯¯¯¯¯",
@@ -14,7 +19,7 @@ while True:
                 "  _____\n  |   |\n  O   |\n /|\  |\n /    |\n      |\n¯¯¯¯¯¯¯",
                 "  _____\n  |   |\n  O   |\n /|\  |\n / \  |\n      |\n¯¯¯¯¯¯¯"]
 
-        #opening wordlist fron external file and choosing the word
+        #opening wordlist from external file and choosing the word
         f = open("wordlist.txt", "r")
         word = f.readlines()
         guess_word = random.choice(word)[:-1]
@@ -25,6 +30,7 @@ while True:
 
         #function for using key element
         def get_time(elem):
+                """function for using key element"""
                 #always returns second item in list(in this case time)
                 return elem[1]
 
@@ -32,9 +38,11 @@ while True:
         #returns sorted 2D list, (highscore) is deffined elsewhere and
         #depends on what words was used.
         def scores_to_2D(highscore):
+                """makes scores into 2D list and sorts it by time"""
                 f = open(highscore, "r")
                 scores = f.read()
                 twoD = [] 
+                """2D list"""
                 #removes spaces from the highscore list found in .txt
                 #then splits it at every time line changes
                 lines = scores.strip().split("\n")
@@ -50,10 +58,12 @@ while True:
         def winner_score(elapsed_time, win_time, number, name):
                 #finds file corresponding to the word that was guessed
                 file = f"highscores{number}.txt"
+                """File corresponding to the word that was guessed"""
                 #gets scores as sorted 2D list (sorted by time)
                 sorted = scores_to_2D(file)
+                """ Sorted list of scores"""
                 #top 3 players, first being fastest
-                first = float(sorted[0][1]) 
+                first = float(sorted[0][1])
                 second = float(sorted[1][1])
                 third = float(sorted[2][1])
                 #gross if/elif/else stuff to determine and tell what spot current player got 
@@ -72,6 +82,7 @@ while True:
 
         #function to overwrite specific highscore file
         def overwrite(file, stripped_scores):
+                """function to overwrite specific highscore file"""
                 score_file = open(file, "w") #opens the file
                 score_file.seek(0) #finds starting point
                 score_file.write(stripped_scores) #writes new scores
@@ -80,8 +91,9 @@ while True:
         #function for setting new scores
         #all parameters come from where the function is called form
         def set_new_score(name, wintime, scores, position, file):
+                """Function to set new score and remove old one"""
                 file = file #This is the file holding highscores for specific word
-
+                """the file holding highscores for specific word"""
                 #if/elif for changing one line and then compiling the final string,
                 #to be used with overwrite function
                 if position == 0:
@@ -108,6 +120,7 @@ while True:
 
         #function for checking the highscores
         def check_scores(number):
+                """Function to check highscores"""
                 #file is chosen depending what words scores user wants to check
                 file = f"highscores{number}.txt"
                 f = open(file, "r")
@@ -116,11 +129,14 @@ while True:
 
         #function for playing the game of hangman
         def play_the_game(name):
+                """Function for playing the game"""
                 print("Okay", player_name.capitalize(), "Let's start!")
                 print(pic[0]) # prints the starting picture
                 print("your word has", len(guess_word), "letters") #let's you know number of letters in the word being guessed
                 number_of_guesses = 0 #amount of guesses done
+                """Amount of guesses done"""
                 guess = "" #guessed word
+                """Guessed word/letter"""
                 t = time.perf_counter_ns() #start of timer
 
                 #as long as word is not guessed and player has guesses left,
@@ -128,7 +144,7 @@ while True:
                 while guess != guess_word and number_of_guesses < 6:
                         print("What is your guess?")
                         guess = input() #players guess, can be one letter or full word
-
+                        """Players guess(word or letter)"""
                         #if player guesses the word correctly we go here:
                         if guess == guess_word:
                                 #timer is stopped and saved

@@ -1,3 +1,3 @@
-Val,9.29
-Vera,25.12
-Vixen,45.18
+Val,7.29
+Vera,8.12
+Vixen,9.18
