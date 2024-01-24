@@ -23,5 +23,4 @@ Hangman.exe
 
 # Screencast
 
-(https://youtu.be/ohF1-WoVK5M)
 
